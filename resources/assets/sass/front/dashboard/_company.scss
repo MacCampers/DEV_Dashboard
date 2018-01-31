@@ -1,0 +1,32 @@
+.strategy {
+   min-height: 140px;
+   box-sizing: border-box;
+
+   &.new {
+      text-align: center;
+      @include transition(all 200ms);
+
+      .text {
+         margin-top: 10px;
+         @include transition(all 200ms);
+
+         p {
+            color: $blue;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+         }
+      }
+
+      &:hover {
+         border-color: white;
+         box-shadow: $blue-shadow;
+
+         .text {
+            opacity: $hover-opacity;
+         }
+      }
+   }
+}

@@ -1,0 +1,22 @@
+.sweet-alert {
+   h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4em;
+
+      &:after { content: ''; }
+   }
+   p {
+      font-size: $font-size;
+   }
+
+   fieldset { margin: 0; }
+
+   button {
+      font-size: 14px;
+      margin-top: 40px;
+   }
+   input[type] {
+      margin: 20px auto 0 auto;
+   }
+}

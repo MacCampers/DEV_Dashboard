@@ -1,0 +1,60 @@
+#match-results {
+   ul {
+      margin-bottom: 20px;
+
+      li {
+         padding: 4px 0;
+
+         &:not(.visible) {
+            display: none;
+         }
+      }
+
+      .position {
+         font-weight: 700;
+         color: $blue;
+      }
+   }
+
+   #show-next-results {
+      text-align: center;
+      color: $blue;
+      cursor: pointer;
+
+      &:hover {
+         color: $blue-light;
+      }
+   }
+}
+
+#logs {
+   font-family: "Courier";
+
+   ul {
+      margin-bottom: 40px;
+   }
+
+   section {
+      border-bottom: 1px solid $grey-light;
+      background: black;
+      color: white;
+      padding: 20px;
+   }
+   h3 {
+      font-weight: 700;
+      color: $blue;
+      margin-bottom: 10px;
+   }
+   h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 10px;
+   }
+
+   .total-score {
+      font-size: 18px;
+      margin-top: 20px;
+      color: lawngreen;
+      font-weight: 700;
+   }
+}

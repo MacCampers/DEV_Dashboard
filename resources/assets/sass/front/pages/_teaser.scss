@@ -1,0 +1,57 @@
+#project-teaser {
+   width: 100%;
+   padding-bottom: 50px;
+
+   .logo {
+      text-align: center;
+      margin-bottom: 80px;
+   }
+
+   .left-panel, .right-panel {
+      float: left;
+      width: 50%;
+      background-color: white;
+      color: $grey-dark;
+      padding: 30px;
+      margin: 0 20px;
+      border-radius: $border-radius;
+      box-shadow: $blue-shadow;
+      box-sizing: border-box;
+
+      p {
+         font-size: 16px;
+      }
+   }
+
+   .left-panel {
+      p { margin-bottom: 40px; }
+
+      .content {
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+      }
+   }
+
+   #decline-button > a {
+      display: inline-block;
+      font-family: 'Nexa';
+      font-size: 10px;
+      font-weight: 700;
+      color: $red-light;
+      text-transform: uppercase;
+      line-height: 1.5em;
+      letter-spacing: .08em;
+      padding: 8px 25px;
+
+      &:hover {
+         opacity: $hover-opacity;
+      }
+   }
+}
+#decline-popup {
+   #end-comment {
+      margin-bottom: 10px;
+   }
+}

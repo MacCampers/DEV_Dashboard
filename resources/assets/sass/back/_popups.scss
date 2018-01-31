@@ -1,0 +1,44 @@
+.popup-container {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background-color: rgba(0,0,0,.9);
+   z-index: 99999;
+   overflow: auto;
+
+   .popup {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: -50px auto 50px auto;
+      background-color: white;
+      padding: 30px 50px;
+      box-sizing: border-box;
+      box-shadow: 0 0 40px rgba(0,0,0,.07);
+      opacity: 0;
+      @include transition(all 300ms ease-out);
+      @extend .row;
+
+      h2 { margin-bottom: 40px; }
+
+      .close-popup {
+         position: absolute;
+         font-size: 16px;
+         top: 20px;
+         right: 20px;
+         cursor: pointer;
+
+         &:hover {
+            opacity: .6;
+         }
+      }
+
+      &.visible {
+         opacity: 1;
+         margin-top: 50px;
+      }
+   }
+}

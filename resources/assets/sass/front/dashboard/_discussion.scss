@@ -1,0 +1,139 @@
+#project-discussion {
+   #messages {
+      max-height: 500px;
+      overflow: auto;
+      padding: 20px;
+      border: 1px solid $grey-light;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+
+      &.readonly {
+         border-bottom-left-radius: $border-radius;
+         border-bottom-right-radius: $border-radius;
+      }
+      &:not(.readonly) {
+         border-bottom: 0;
+      }
+
+      p.empty {
+         margin-bottom: 0;
+      }
+
+      .message-container {
+         text-align: left;
+
+         &.owned {
+            text-align: right;
+
+            .content {
+               color: white;
+               background-color: $blue;
+               border-color: $blue;
+            }
+            .date {
+               text-align: right;
+            }
+
+            .attachments {
+               border-color: $blue;
+            }
+         }
+         &:not(:last-child) {
+            margin-bottom: 20px;
+         }
+      }
+      .event {
+         font-size: $font-small;
+         text-align: center;
+         color: $grey;
+         line-height: 1.3em;
+         margin-bottom: 20px;
+      }
+      .message {
+         display: inline-block;
+         font-size: 13px;
+         font-weight: 400;
+         text-align: left;
+         width: 80%;
+
+         p {
+            text-align: left;
+            margin-bottom: 0;
+         }
+
+         .content {
+            padding: 20px;
+            border: 1px solid $grey-light;
+            border-radius: $border-radius;
+
+            a {
+               color: inherit;
+               text-decoration: underline;
+               &:hover {
+                  text-decoration: none;
+               }
+            }
+         }
+         .date {
+            font-size: 10px;
+            color: $grey;
+            padding: 5px 2px;
+         }
+
+         .content + .attachments {
+            border-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+         }
+
+         .attachments {
+            padding: 12px 20px;
+            border: 1px solid $grey-light;
+            border-radius: $border-radius;
+
+            .file {
+               font-weight: 700;
+               color: $blue;
+
+               .icon-download {
+                  font-size: 18px;
+                  margin-right: 5px;
+               }
+
+               &:not(:last-of-type) {
+                  margin-bottom: 5px;
+               }
+
+               &:hover {
+                  color: $blue-light;
+               }
+            }
+         }
+
+         &.has-attachment {
+            .content {
+               border-bottom-left-radius: 0;
+               border-bottom-right-radius: 0;
+            }
+         }
+      }
+   }
+
+   .mce-tinymce {
+      border-color: $grey-light !important;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      margin-bottom: 20px;
+
+      .mce-top-part:before {
+         background-color: white;
+         border-radius: 0;
+         border-color: $grey-light;
+      }
+      div.mce-edit-area {
+         background-color: transparent;
+      }
+   }
+}

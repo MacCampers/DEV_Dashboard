@@ -1,0 +1,19 @@
+@font-face {
+   font-family: 'Nexa';
+   src: url('fonts/Nexa/Nexa-Bold.woff2') format('woff2'),
+        url('fonts/Nexa/Nexa-Bold.woff') format('woff'),
+        url('fonts/Nexa/Nexa-Bold.otf') format('otf');
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Nexa';
+   src: url('fonts/Nexa/Nexa-Light.woff2') format('woff2'),
+        url('fonts/Nexa/Nexa-Light.woff') format('woff'),
+        url('fonts/Nexa/Nexa-Light.otf') format('otf');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');

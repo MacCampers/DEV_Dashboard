@@ -1,0 +1,75 @@
+<mjml>
+   <mj-head>
+      <mj-font name="Open Sans" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" />
+   </mj-head>
+   <mj-body>
+      <mj-section>
+         <mj-container>
+            <mj-section background-color="white">
+               <mj-column>
+                  <mj-image width="200" src="{{ asset('img/logo_v.png') }}"></mj-image>
+
+                  <mj-divider border-color="#00b2ff" border-width="1px"></mj-divider>
+
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="20px" font-weight="bold" color="#252b33" align="center" padding-bottom="0">@lang('emails.match.title_' . $match->matchable_type, ['strategy' => $match->matchable->name, 'user' => $match->project->initiator->full_name])</mj-text>
+               </mj-column>
+            </mj-section>
+
+            <mj-section background-color="white">
+               <mj-column>
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="12px" color="#252b33" align="left">@lang('emails.match.text_' . $match->matchable_type, ['user_name' => $user->full_name, 'strategy' => $match->matchable->name, 'project' => $match->project->code_name, 'user' => $match->project->initiator->full_name])</mj-text>
+
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="12px" color="#252b33" align="left">@lang('emails.match.text_2')</mj-text>
+               </mj-column>
+            </mj-section>
+
+            <mj-section background-color="white" padding="10px 25px">
+               <mj-column border="1px solid #dedede" border-radius="10px">
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="12px" color="#252b33" align="left">{!! nl2br($teaser) !!}</mj-text>
+               </mj-column>
+            </mj-section>
+
+            <mj-section background-color="white">
+               <mj-column>
+                  <mj-table font-family="Open Sans, Helvetica, Arial" font-size="12px">
+                     <tr>
+                        <th colspan="2" style="padding: 10px; background-color: #00b2ff; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">@lang('emails.match.project_data')</th>
+                     </tr>
+
+                     @php $i = 0; @endphp
+                     @foreach( $data as $index => $value )
+                     <tr>
+                        <td style="font-weight: bold; padding: 10px;{{ $i%2 !== 0 ? ' background-color: #f7f8f9;' : '' }}" align="left" valign="top">@lang('emails.match.fields.' . $index)</td>
+                        <td style="padding: 10px;{{ $i%2 !== 0 ? ' background-color: #f7f8f9;' : '' }}" align="left" valign="top">
+                           @if( is_array($value) )
+                           @foreach( $value as $v )
+                           {{ $v }}<br />
+                           @endforeach
+                           @else
+                           {{ $value }}
+                           @endif
+                        </td>
+                     </tr>
+
+                     @php $i++; @endphp
+                     @endforeach
+                  </mj-table>
+
+                  <mj-button font-family="Open Sans, Helvetica, Arial" font-size="12px" background-color="#00b2ff" border-radius="8px" color="white">
+                     <a href="{{ $link }}" style="color: white; text-decoration: none;">@lang('emails.match.button')</a>
+                  </mj-button>
+
+                  <mj-spacer height="10px" />
+
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="10px" color="#9ca6ad" align="center"><a href="{{ route('match_decline', ['id' => $match->id, 'email' => $user->email]) }}" style="color: #9ca6ad;">@lang('emails.match.deny_link')</a></mj-text>
+
+
+                  <mj-spacer height="20px" />
+
+                  <mj-text font-family="Open Sans, Helvetica, Arial" font-size="12px" align="center" color="#9ca6ad">@lang('emails.contact')</mj-text>
+               </mj-column>
+            </mj-section>
+         </mj-container>
+      </mj-section>
+   </mj-body>
+</mjml>

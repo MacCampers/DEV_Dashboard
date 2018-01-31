@@ -1,0 +1,200 @@
+#concept {
+   section#intro {
+      font-size: 18px;
+      padding-bottom: 0;
+
+      .image-container {
+         position: relative;
+
+         img {
+            position: absolute;
+            top: -10px;
+            left: 80px;
+            max-width: none;
+            width: 140%;
+         }
+      }
+
+      @media screen and (max-width: 1024px) {
+         font-size: 16px;
+
+         h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+         }
+         .image-container img {
+            width: 120%;
+         }
+      }
+      @media screen and (max-width: 650px) {
+         .image-container {
+            text-align: center;
+
+            img {
+               position: relative;
+               top: auto;
+               left: auto;
+               width: 100%;
+               max-width: 280px;
+               margin-top: 50px;
+            }
+         }
+      }
+      @media screen and (max-width: 500px) {
+         h2 { font-size: 24px; }
+      }
+   }
+
+   section#what-we-do {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 30px;
+
+      h4 {
+         margin-bottom: 20px;
+      }
+
+      .list {
+         font-size: 16px;
+         background-color: white;
+         border-radius: $border-radius;
+         height: 100%;
+         padding: 30px;
+         box-sizing: border-box;
+         box-shadow: $blue-shadow;
+
+         h4 {
+            font-size: 24px;
+            font-weight: 300;
+            text-transform: none;
+            margin-bottom: 30px;
+         }
+
+         p {
+            font-weight: 500;
+            margin-top: 5px;
+         }
+         li {
+            position: relative;
+            padding: 5px 20px;
+
+            & > span {
+               position: absolute;
+               top: 12px;
+               font-size: 10px;
+               margin-left: -20px;
+            }
+         }
+
+         &.red {
+            li > span {
+               color: $red-light;
+            }
+         }
+         &.blue {
+            li > span {
+               color: $blue;
+            }
+         }
+      }
+
+      @media screen and (max-width: 650px) {
+         margin-top: 0;
+
+         .flex { display: block; }
+         .list { margin-bottom: 20px; }
+      }
+      @media screen and (max-width: 500px) {
+         .list {
+            font-size: 14px;
+            padding: 20px;
+
+            h4 {
+               font-size: 20px;
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+
+   section#target {
+      font-size: 24px;
+      font-weight: 300;
+      background-position: top;
+
+      p {
+         max-width: 720px;
+         margin: 0 auto;
+      }
+
+      @media screen and (max-width: 650px) {
+         font-size: 18px;
+      }
+   }
+
+   section#profiles {
+      .user {
+         text-align: center;
+
+         .title {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 3px;
+         }
+         a {
+            display: inline-block;
+            margin-top: 10px;
+            color: $grey-light;
+            text-decoration: none;
+
+            &:hover {
+               color: $blue;
+            }
+         }
+         p {
+            margin-bottom: 0;
+         }
+
+         .image {
+            position: relative;
+            padding: 6px;
+            border: 1px solid transparent;
+            box-sizing: border-box;
+
+            img {
+               position: relative;
+               border-radius: 50%;
+               background-color: $grey-icons;
+               height: auto;
+               @include transition(all 200ms ease-out);
+            }
+
+            &:before {
+               content: '';
+               position: absolute;
+               top: 0;
+               left: 0;
+               bottom: 0;
+               right: 0;
+               border: 1px solid $grey-light;
+               border-radius: 50%;
+               opacity: .5;
+               @include scale(.5,.5);
+               @include transition(all 200ms ease-out);
+            }
+
+            &:hover {
+               &:before {
+                  @include scale(1,1);
+               }
+
+               img {
+                  background-color: $blue;
+                  box-shadow: 0 14px 24px rgba(0,178,255,.3);
+               }
+            }
+         }
+      }
+   }
+}

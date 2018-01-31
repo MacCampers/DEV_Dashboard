@@ -1,0 +1,223 @@
+#matching-results {
+   h2 {
+      text-align: center;
+      margin-bottom: 50px;
+   }
+
+   section {
+      padding-top: 50px;
+   }
+
+   .investors-number {
+      line-height: 1.7em;
+      margin-bottom: 40px;
+   }
+   .matching-image {
+      img {
+         vertical-align: middle;
+      }
+      .relation {
+         margin-left: 20px;
+      }
+   }
+
+   .alert {
+      padding: 35px 0;
+      margin-bottom: 0;
+   }
+
+   .matches {
+      padding-bottom: 10px;
+      margin-bottom: 0;
+   }
+
+   .email-preview {
+      font-size: 12px;
+      color: black;
+      text-align: center;
+      border-radius: $border-radius;
+      box-shadow: $blue-shadow;
+      padding: 30px;
+
+      .email-container {
+         max-width: 600px;
+         margin: 0 auto;
+      }
+
+      .logo {
+         margin-bottom: 20px;
+      }
+      .title {
+         font-size: 20px;
+         font-weight: 700;
+         padding: 20px 0;
+         margin-bottom: 30px;
+         border-top: 1px solid $blue;
+      }
+      .teaser {
+         margin-bottom: 20px;
+      }
+
+      table th {
+         text-align: center;
+      }
+   }
+
+   .cancel {
+      color: $grey;
+      margin: 10px;
+   }
+
+   .matching-image > .logo-project {
+      display: inline-block;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      text-transform: uppercase;
+      line-height: 52px;
+      text-align: center;
+      background-color: $red-dark;
+      border-radius: 50%;
+      margin-left: 25px;
+
+      &:before {
+         content: '';
+         position: absolute;
+         border: 1px solid $red-dark;
+         top: -4px;
+         left: -4px;
+         right: -4px;
+         bottom: -4px;
+         border-radius: 50%;
+         box-sizing: border-box;
+      }
+      span {
+         font-size: $font-small;
+         font-weight: 700;
+         text-align: center;
+         color: white;
+      }
+   }
+
+   .matches {
+      border-top: 1px solid $grey-light;
+
+      .match {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
+   }
+
+   #add-investors-section {
+      color: white;
+      margin-bottom: 0;
+      padding-bottom: 50px;
+   }
+}
+
+.matches {
+   div.match {
+      a, span { font-size: 12px; }
+      a {
+         color: $blue;
+
+         &:hover {
+            opacity: $hover-opacity;
+         }
+      }
+
+      h3, h4, h5 {
+         margin-bottom: 2px;
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
+      }
+      h5 {
+         font-size: 12px;
+      }
+
+      .score {
+         font-size: 24px;
+         color: $red-light;
+         font-weight: 600;
+         margin: 25px 0;
+      }
+
+      .checkbox {
+         margin-bottom: 0;
+         margin-top: 10px;
+
+         & > label {
+            padding: 0;
+            pointer-events: none;
+         }
+         .checkmark {
+            left: 50%;
+            @include translate(-50%,0);
+         }
+      }
+
+      .steps {
+         display: flex;
+         margin-top: 15px;
+      }
+      .step {
+         width: 100%;
+
+         p {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+         }
+         .icon {
+            font-size: 16px;
+            color: $grey-light;
+
+            &.icon-check { color: $blue; }
+            &.icon-delete { color: $red-light; }
+            &.uploaded { color: $blue; }
+         }
+      }
+
+      .last-activity {
+         color: $grey;
+         font-size: 10px;
+         margin-top: 15px;
+         line-height: 1.3em;
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+      }
+
+      &.ended {
+         opacity: .5;
+      }
+   }
+
+   &:first-of-type() {
+      margin-top: 40px;
+   }
+}
+
+#add-investor-popup {
+   .popup {
+      min-height: 300px;
+   }
+   #found-contact-name {
+      font-weight: 700;
+   }
+   .cancel {
+      display: block;
+      font-size: $font-small;
+      margin-top: 10px;
+
+      span {
+         color: $grey;
+         cursor: pointer;
+         &:hover {
+            opacity: $hover-opacity;
+         }
+      }
+   }
+}

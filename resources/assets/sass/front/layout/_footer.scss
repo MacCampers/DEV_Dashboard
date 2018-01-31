@@ -1,0 +1,132 @@
+footer {
+   background-color: $grey-dark;
+   color: white;
+   padding: 40px 0;
+
+   .copyrights {
+     h1 {
+       color: white;
+       font-size: 45px;
+       padding: 10px 0;
+       margin: 0;
+     }
+     p {
+        color: #777;
+     }
+   }
+   .logo {
+      display: block;
+   }
+
+   .social-icons span {
+      display: inline-block;
+      font-size: 25px;
+      color: white;
+      border-radius: 50%;
+      padding: 5px;
+      margin-top: 20px;
+      margin-right: 5px;
+
+      &:hover {
+         color: $blue;
+         border-color: $blue;
+      }
+   }
+
+   .button.link {
+      padding-left: 10px;
+      padding-top: 10px;
+      &:hover {
+         color: $blue;
+      }
+      span {
+         vertical-align: -1px;
+         margin-left: 3px;
+         @include transition(all 200ms);
+      }
+      &:hover span {
+         color: $blue;
+         margin-left: 8px;
+      }
+   }
+
+   @media screen and (min-width: 651px) and (max-width: 1024px) {
+      img {
+         margin-right: 30px;
+         vertical-align: none;
+      }
+   }
+   @media screen and (max-width: 650px) {
+      .logo {
+         margin-bottom: 20px;
+      }
+      .newsletter {
+         margin-top: 20px;
+         clear: left;
+      }
+   }
+   @media screen and (max-width: 500px) {
+      .social-icons {
+         text-align: center;
+
+         span {
+            font-size: 35px;
+         }
+      }
+   }
+
+   #frenchtech {
+      margin-top: 20px;
+      margin-bottom: 20px;
+   }
+
+   li a {
+      display: block;
+      padding: 10px 0;
+
+      &:hover {
+         opacity: $hover-opacity;
+      }
+   }
+   p {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 10px 0;
+
+      @media screen and (max-width: 1024px) {
+         margin: 0;
+      }
+   }
+}
+
+.newsletter-form {
+   p {
+      margin-bottom: 20px;
+   }
+   form {
+      margin-top: 30px;
+   }
+
+   input[type=email] {
+      float: left;
+      height: 50px;
+      width: 65%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      border: 1px solid white;
+      border-right: 0;
+      color: $font-color;
+   }
+   button {
+      margin: 0;
+      float: left;
+      width: 35%;
+      height: 50px;
+      padding-left: 0;
+      padding-right: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+   }
+}
