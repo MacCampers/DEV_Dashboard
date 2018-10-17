@@ -12,7 +12,7 @@ export class RegisterUserComponent implements OnInit {
   newUser = { email: '', password: '' };
   existingUser = { email: '', password: '' };
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,8 +20,7 @@ export class RegisterUserComponent implements OnInit {
   registerUser() {
     this.authService.register(this.newUser.email, this.newUser.password)
     .then(createdUser => {
-        //console.log('createdUser', createdUser);
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['emailSection']);
     })
     .catch(error => console.log(error.message));
   }
@@ -29,7 +28,6 @@ export class RegisterUserComponent implements OnInit {
   loginUser() {
     this.authService.login(this.existingUser.email, this.existingUser.password)
     .then(value => {
-      //console.log('log reussi', value);
       this.router.navigate(['dashboard']);
     })
     .catch(err => {

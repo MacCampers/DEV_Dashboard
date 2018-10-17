@@ -50,7 +50,7 @@
                     </div>
                     <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="newUser.password">
                   </div>
-                  <button class="btn btn-primary active px-4" type="submit">Register Now!</button>
+                  <button class="btn btn-primary active px-4" type="submit" (click)="authService.sendEmailVerification()">Register Now!</button>
                 </form>
               </div>
             </div>
