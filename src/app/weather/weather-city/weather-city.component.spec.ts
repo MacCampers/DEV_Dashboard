@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WheatherAddCityComponent } from './wheather-add-city.component';
+import { WeatherCityComponent } from './weather-city.component';
 
-describe('WheatherAddCityComponent', () => {
-  let component: WheatherAddCityComponent;
-  let fixture: ComponentFixture<WheatherAddCityComponent>;
+describe('WeatherCityComponent', () => {
+  let component: WeatherCityComponent;
+  let fixture: ComponentFixture<WeatherCityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WheatherAddCityComponent ]
+      declarations: [ WeatherCityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WheatherAddCityComponent);
+    fixture = TestBed.createComponent(WeatherCityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

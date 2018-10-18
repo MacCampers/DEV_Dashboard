@@ -1,0 +1,15 @@
+<div class="widget">
+  <form [formGroup]="form" (ngSubmit)="createCity()">
+    <div class="input-prepend input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fa fa-search"></i>
+        </span>
+      </div>
+      <input class="form-control" id="prependedInput" size="16" type="text" placeholder="What city are you looking for?" formControlName="city">
+      <span class="input-group-append">
+        <button class="btn btn-info" type="submit">Search city</button>
+      </span>
+    </div>
+  </form>
+</div>

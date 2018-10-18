@@ -24,12 +24,11 @@ import { BackendHomeComponent } from './backend/backend-home/backend-home.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 //widget
 import { WidgetComponent } from './widget/widget.component';
-import { WheatherCityComponent } from './weather/wheather-city/wheather-city.component';
-import { WheatherAddCityComponent } from './weather/wheather-add-city/wheather-add-city.component';
 
 //services
 import { AuthService } from './authentification/services/auth.service';
-import { WheatherService } from './weather/wheather-service.service';
+import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
+import { WeatherSettingComponent } from './weather/weather-setting/weather-setting.component';
 
 
 const CONFIG: FirebaseAppConfig = {
@@ -47,8 +46,6 @@ const ROUTES: Routes = [
   { path: 'emailSection', component: EmailVerificationComponent },
   { path: 'userSettings', component: UserSettingComponent },
   { path: 'widget', component: WidgetComponent },
- // { path: 'city/:city', component: WheatherCityComponent },
-  { path: 'add-city', component: WheatherAddCityComponent },
   { path: 'admin', component: BackendHomeComponent },
 ];
 
@@ -63,8 +60,8 @@ const ROUTES: Routes = [
     UserSettingComponent,
     HeaderComponent,
     SidebarComponent,
-    WheatherCityComponent,
-    WheatherAddCityComponent,
+    WeatherCityComponent,
+    WeatherSettingComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +76,6 @@ const ROUTES: Routes = [
   ],
   providers: [
     AuthService,
-    WheatherService
   ],
   bootstrap: [AppComponent]
 })
