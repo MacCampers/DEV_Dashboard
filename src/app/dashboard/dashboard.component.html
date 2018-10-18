@@ -1,141 +1,75 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
-  <header class="app-header navbar">
-    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand">
-      <img src="src/assets/logo.png" alt="Dashboard" width="150">
-    </a>
-    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="nav navbar-nav d-md-down-none">
-      <li class="nav-item px-3">
-        <a class="nav-link">Dashboard</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link">Settings</a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <a style="margin-right: 10px;" *ngIf="authService.user$ | async">connecté en tant que {{ (authService.user$ | async)?.email }}</a> 
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item">
-            <i class="fa fa-user"></i> Profile
-          </a>
-          <a class="dropdown-item">
-            <i class="fa fa-wrench"></i> Settings
-          </a>
-          <div class="divider"></div>
-          <a class="dropdown-item">
-            <i class="fa fa-lock"></i> Logout
-          </a>
-        </div>
-      </li>
-    </ul>
-  </header>
+  <app-header></app-header>
 
   <div class="app-body">
-    <div class="sidebar">
-      <nav class="sidebar-nav">
-        <ul class="nav">
-
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="nav-icon icon-speedometer"></i> Dashboard
-              <!-- <span class="badge badge-primary">NEW</span> -->
-            </a>
-          </li>
-
-          <li class="nav-title">Components</li>
-
-          <li class="nav-item">
-            <a class="nav-link" (click)="widgetPage()">
-              <i class="nav-icon icon-calculator"></i> Widgets
-            </a>
-          </li>
-
-          <li *ngIf="authService.user$ | async" class="nav-item">
-            <a class="nav-link" (click)="logoutUser()">
-              <i class="nav-icon icon-user"></i> Se déconnecter
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-    </div>
+    <app-sidebar></app-sidebar>
 
     <main class="main">
 
       <div class="container-fluid">
         <div class="animated fadeIn">
 
-          <!-- ON VA METTRE LES FEED ICI DANS LES COL -->
           <div class="row">
-              <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-primary">
-                  <div class="card-body pb-0">
-                    <app-wheather-widget></app-wheather-widget>
-                  </div>
-                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
-                    <canvas class="chart" id="card-chart1" height="70"></canvas>
-                  </div>
+          
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+                    <app-wheather-city></app-wheather-city>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart1" height="70"></canvas>
                 </div>
               </div>
-            
+            </div>
+
             <!-- /.col-->
-              <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-warning">
-                  <div class="card-body pb-0">
-                    <div class="btn-group float-right">
-                      <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-settings"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-warning">
+                <div class="card-body pb-0">
+                  <div class="btn-group float-right">
+                    <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-settings"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                    <div class="text-value">9.823</div>
-                    <div>Members online</div>
                   </div>
-                  <div class="chart-wrapper mt-3" style="height:70px;">
-                    <canvas class="chart" id="card-chart3" height="70"></canvas>
-                  </div>
+                  <div class="text-value">9.823</div>
+                  <div>Members online</div>
+                </div>
+                <div class="chart-wrapper mt-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart3" height="70"></canvas>
                 </div>
               </div>
-            
+            </div>
+
             <!-- /.col-->
-              <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-danger">
-                  <div class="card-body pb-0">
-                    <div class="btn-group float-right">
-                      <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-settings"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+                  <div class="btn-group float-right">
+                    <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-settings"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                    <div class="text-value">9.823</div>
-                    <div>Members online</div>
                   </div>
-                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
-                    <canvas class="chart" id="card-chart4" height="70"></canvas>
-                  </div>
+                  <div class="text-value">9.823</div>
+                  <div>Members online</div>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart4" height="70"></canvas>
                 </div>
               </div>
+            </div>
             <!-- /.col-->
 
           </div>
@@ -420,7 +354,7 @@
                     <!-- /.col-->
                   </div>
                   <!-- /.row-->
-                  
+
                 </div>
               </div>
             </div>
@@ -442,5 +376,5 @@
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="asset/main.js"></script>
-  
+
 </body>

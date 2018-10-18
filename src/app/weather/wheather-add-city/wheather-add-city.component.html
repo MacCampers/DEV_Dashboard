@@ -1,0 +1,3 @@
+<input type="text" placeholder="Vancouver" [(ngModel)]="newCity" [disabled]="searching" > 
+<div>{{newCity}}</div>
+<button (click)="addCity()" [disabled]="searching">Add city</button>

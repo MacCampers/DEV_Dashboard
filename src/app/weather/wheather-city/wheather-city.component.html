@@ -1,0 +1,7 @@
+<h1>{{city | uppercase }}</h1>
+<div>{{weather}}</div>
+<div>{{temp}}</div>
+
+<div style="color:red" *ngIf="failedToLoad">Weather is not available. Try looking out the window !</div>
+
+<a routerLink="/add-city">Add new city</a>

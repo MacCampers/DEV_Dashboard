@@ -25,6 +25,7 @@
                   <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="existingUser.password">
                 </div>
                 <button class="btn btn-primary px-4" type="submit">Sign In</button>
+                <p *ngIf="error$ != 0" style="color:red; margin-top:10px;">{{ error$ }}</p>
               </form>
             </div>
           </div>
@@ -51,6 +52,7 @@
                     <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="newUser.password">
                   </div>
                   <button class="btn btn-primary active px-4" type="submit" (click)="authService.sendEmailVerification()">Register Now!</button>
+                  <p *ngIf="errorCreate$ != 0" style="color:red; margin-top:10px;">{{ errorCreate$ }}</p>
                 </form>
               </div>
             </div>

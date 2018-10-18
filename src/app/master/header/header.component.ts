@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../authentification/services/auth.service';
+import { AuthService } from '../../authentification/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-widget',
-  templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class WidgetComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor(public authService:AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  
 
   dashboardPage() {
     this.router.navigate(['/dashboard']);
@@ -22,7 +21,7 @@ export class WidgetComponent implements OnInit {
   settingPage() {
     this.router.navigate(['/userSettings']);
   }
-
+  
   widgetPage() {
     this.router.navigate(['/widget']);
   }
@@ -31,5 +30,4 @@ export class WidgetComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/']);
   }
-
 }

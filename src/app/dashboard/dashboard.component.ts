@@ -14,12 +14,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  widgetPage() {
-    this.router.navigate(['/widget']);
-  }
-
-  logoutUser() {
-    this.authService.logout();
-    this.router.navigate(['/']);
-  }
 }

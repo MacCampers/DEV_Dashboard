@@ -1,0 +1,29 @@
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+
+      <li class="nav-item">
+        <a style="cursor: pointer;" class="nav-link" (click)="dashboardPage()">
+          <i class="nav-icon icon-speedometer"></i> Dashboard
+          <!-- <span class="badge badge-primary">NEW</span> -->
+        </a>
+      </li>
+
+      <li class="nav-title">Components</li>
+
+      <li class="nav-item">
+        <a style="cursor: pointer;" class="nav-link" (click)="widgetPage()">
+          <i class="nav-icon icon-calculator"></i> Widgets
+        </a>
+      </li>
+
+      <li *ngIf="authService.user$ | async" class="nav-item">
+        <a style="cursor: pointer;" class="nav-link" (click)="logoutUser()">
+          <i class="nav-icon icon-user"></i> Se déconnecter
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WheatherSettingComponent } from './wheather-setting.component';
+import { WheatherAddCityComponent } from './wheather-add-city.component';
 
-describe('WheatherSettingComponent', () => {
-  let component: WheatherSettingComponent;
-  let fixture: ComponentFixture<WheatherSettingComponent>;
+describe('WheatherAddCityComponent', () => {
+  let component: WheatherAddCityComponent;
+  let fixture: ComponentFixture<WheatherAddCityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WheatherSettingComponent ]
+      declarations: [ WheatherAddCityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WheatherSettingComponent);
+    fixture = TestBed.createComponent(WheatherAddCityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

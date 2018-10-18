@@ -1,76 +1,9 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
-  <header class="app-header navbar">
-    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand">
-      <img src="src/assets/logo.png" alt="Dashboard" width="150">
-    </a>
-    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="nav navbar-nav d-md-down-none">
-      <li class="nav-item px-3">
-        <a class="nav-link">Dashboard</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link">Settings</a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <a style="margin-right: 10px;" *ngIf="authService.user$ | async">connecté en tant que {{ (authService.user$ |
-            async)?.email }}</a>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item">
-            <i class="fa fa-user"></i> Profile
-          </a>
-          <a class="dropdown-item">
-            <i class="fa fa-wrench"></i> Settings
-          </a>
-          <div class="divider"></div>
-          <a class="dropdown-item">
-            <i class="fa fa-lock"></i> Logout
-          </a>
-        </div>
-      </li>
-    </ul>
-  </header>
+  <app-header></app-header>
 
   <div class="app-body">
-    <div class="sidebar">
-      <nav class="sidebar-nav">
-        <ul class="nav">
-
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="nav-icon icon-speedometer"></i> Dashboard
-              <!-- <span class="badge badge-primary">NEW</span> -->
-            </a>
-          </li>
-
-          <li class="nav-title">Components</li>
-
-          <li class="nav-item">
-            <a class="nav-link" (click)="widgetPage()">
-              <i class="nav-icon icon-calculator"></i> Widgets
-            </a>
-          </li>
-
-          <li *ngIf="authService.user$ | async" class="nav-item">
-            <a class="nav-link" (click)="logoutUser()">
-              <i class="nav-icon icon-user"></i> Se déconnecter
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-    </div>
+    <app-sidebar></app-sidebar>    
 
     <main class="main">
 
@@ -82,7 +15,7 @@
                 <div class="card-body">
                   <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;" (click)="weather()">Weather</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;">Weather</a></li>
                     </ol>
                   </nav>
                 </div>

@@ -11,6 +11,8 @@ export class RegisterUserComponent implements OnInit {
 
   newUser = { email: '', password: '' };
   existingUser = { email: '', password: '' };
+  error$;
+  errorCreate$;
 
   constructor(public authService: AuthService, private router: Router) { }
 
@@ -22,7 +24,10 @@ export class RegisterUserComponent implements OnInit {
     .then(createdUser => {
         this.router.navigate(['emailSection']);
     })
-    .catch(error => console.log(error.message));
+    .catch(error => {
+      this.errorCreate$ = error.message;
+      console.log(error.message);
+    })
   }
 
   loginUser() {
@@ -31,7 +36,8 @@ export class RegisterUserComponent implements OnInit {
       this.router.navigate(['dashboard']);
     })
     .catch(err => {
-      console.error('erreur :', err.message)
+      this.error$ = err.message;
+      console.error('erreur :', err.message);
     })
   }
 

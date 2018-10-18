@@ -1,26 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../authentification/services/auth.service';
+import { AuthService } from '../../authentification/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-widget',
-  templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class WidgetComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   constructor(public authService:AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  
 
   dashboardPage() {
     this.router.navigate(['/dashboard']);
-  }
-
-  settingPage() {
-    this.router.navigate(['/userSettings']);
   }
 
   widgetPage() {
