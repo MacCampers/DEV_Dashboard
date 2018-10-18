@@ -15,10 +15,5 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCityCreated(city) {
-    this.cityService.createCity({
-      city: city.value.city
-    });
-  }
 
 }
