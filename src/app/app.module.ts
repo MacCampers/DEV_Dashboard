@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 //custom component
 import { AppComponent } from './app.component';
+import { AgmCoreModule } from '@agm/core';
 //user
 import { RegisterUserComponent } from './authentification/register-user/register-user.component';
 import { EmailVerificationComponent } from './authentification/email-verification/email-verification.component';
@@ -29,6 +30,7 @@ import { WidgetComponent } from './widget/widget.component';
 import { AuthService } from './authentification/services/auth.service';
 import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
 import { WeatherSettingComponent } from './weather/weather-setting/weather-setting.component';
+import { MapComponent } from './map/map.component';
 
 
 const CONFIG: FirebaseAppConfig = {
@@ -62,6 +64,7 @@ const ROUTES: Routes = [
     SidebarComponent,
     WeatherCityComponent,
     WeatherSettingComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,10 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     AngularFireAuthModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBXFtghGl5A9XtMe2jhfmIA1ALC2SptoWg'
+    })
   ],
   providers: [
     AuthService,
