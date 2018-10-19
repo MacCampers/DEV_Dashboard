@@ -10,15 +10,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 export class WeatherService {
   widget: any;
-  city: string;
 
   constructor(private httpClient: HttpClient, private afDB: AngularFireDatabase) { }
 
   apiKey = '6f4c3b19ee439a9a769149498748c4de';
   unit = 'metric';
 
-  getCurrentWeather(city: any): Observable<any> {
-    console.log('ville recue', city);
+  getCurrentWeather(city: string): Observable<any> {
     const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${this.unit}&APPID=${this.apiKey}`;
     console.log('apiCall', apiCall);
     return this.httpClient.get<any>(apiCall).pipe(
@@ -31,11 +29,8 @@ export class WeatherService {
   }
 
   getWeatherDatabase() {
-  //  this.afDB.list('/widget/weather').snapshotChanges().pipe();
-   this.afDB.list('/widget/weather').snapshotChanges().pipe(map(widget => {
-      this.widget = widget;
-      this.city= widget[0] + "";
-      return this.city;
-    }))
+   this.widget = this.afDB.list('/widget/weather').valueChanges().pipe(map(snapshot => {
+      snapshot[0];
+    }));
   }
 }

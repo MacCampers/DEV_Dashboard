@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather-service.service';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-weather-city',
@@ -11,19 +10,20 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 
 export class WeatherCityComponent implements OnInit {
-
+  city: any;
   widget:any;
   CiTy: string;
 
-  constructor(public weatherService: WeatherService, public afDb: AngularFireDatabase) { }
+  constructor(public weatherService: WeatherService, public afDb: AngularFireDatabase) {
+   }
 
-  city = 'Paris';
+  //city = 'Paris';
   weather = '?';
   temp = 0;
   failedToLoad: boolean;
 
   ngOnInit() {
-    console.log(this.weatherService.getWeatherDatabase());
+    this.weatherService.getWeatherDatabase();
     this.weatherService.getCurrentWeather(this.city).subscribe(x => {
       this.weather = x.weather.description;
       this.temp = x.temp;

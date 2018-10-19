@@ -17,5 +17,4 @@ export class WeatherSettingComponent implements OnInit {
   
   }
 
-
 }
