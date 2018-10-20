@@ -10,17 +10,23 @@ import { map } from 'rxjs/operators';
 })
 
 export class WeatherCityComponent implements OnInit {
- 
+  
+  widget: any;
+
   constructor(public weatherService: WeatherService, public afDb: AngularFireDatabase) {
    }
-
-  city = 'Paris';
+  
+  city = 'Paris'
   weather = '?';
   temp = 0;
   failedToLoad: boolean;
 
   ngOnInit() {
-    console.log(this.weatherService.getWeatherDatabase)
+    /*  this.weatherService.getWeatherDatabase().subscribe(z => {
+      this.city = z.city;
+      console.log(this.city);
+    });
+  */
     this.weatherService.getCurrentWeather(this.city).subscribe(x => {
       this.weather = x.weather.description;
       this.temp = x.temp;

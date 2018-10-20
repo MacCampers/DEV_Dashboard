@@ -19,9 +19,7 @@ export class WeatherService {
   unit = 'metric';
 
   getCurrentWeather(city: string): Observable<any> {
-    
     const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${this.unit}&APPID=${this.apiKey}`;
-    console.log('apiCall', apiCall);
     return this.httpClient.get<any>(apiCall).pipe(
       map(resp => {
         const weather = resp.weather[0];
@@ -31,10 +29,17 @@ export class WeatherService {
       }));
   }
 
-  getWeatherDatabase() {
-    return this.widget = this.afDB.list('/widget/weather').valueChanges().pipe(map(snapshot => {
+  getWeatherDatabase(): Observable<any> {
+    /* const url = 'https://epitechdashboard.firebaseio.com/widget/weather';
+    return this.httpClient.get(url).pipe(
+      map(resp => {
+        const z = resp;
+        console.log(z);
+        return z;
+      })); */
+     return this.widget = this.afDB.list('/widget/weather').valueChanges().pipe(map(snapshot => {
       const city  = snapshot[0];
       return city;
-    }));
+    })); 
   }
 }
