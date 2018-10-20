@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 //firebase
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
@@ -13,7 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 //custom component
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 //user
 import { RegisterUserComponent } from './authentification/register-user/register-user.component';
 import { EmailVerificationComponent } from './authentification/email-verification/email-verification.component';
@@ -31,6 +37,7 @@ import { AuthService } from './authentification/services/auth.service';
 import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
 import { WeatherSettingComponent } from './weather/weather-setting/weather-setting.component';
 import { MapComponent } from './map/map.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 const CONFIG: FirebaseAppConfig = {
@@ -65,6 +72,7 @@ const ROUTES: Routes = [
     WeatherCityComponent,
     WeatherSettingComponent,
     MapComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,10 +86,20 @@ const ROUTES: Routes = [
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBXFtghGl5A9XtMe2jhfmIA1ALC2SptoWg'
+    }),
+    NgbModule.forRoot(),
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
     })
   ],
   providers: [
     AuthService,
+    GoogleMapsAPIWrapper
   ],
   bootstrap: [AppComponent]
 })

@@ -9,14 +9,19 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 
 export class WeatherService {
-  widget: any;
-  city:any;
 
-  constructor(private httpClient: HttpClient, private afDB: AngularFireDatabase) { 
+  constructor(private httpClient: HttpClient, private afDB: AngularFireDatabase) {
   }
 
   apiKey = '6f4c3b19ee439a9a769149498748c4de';
   unit = 'metric';
+
+  getWeatherDatabase() {
+    /* return this.afDB.list('/widget/weather').snapshotChanges().pipe(map(snapshot => {
+      snapshot[0];
+    })); */
+    return this.afDB.database.ref('/widget/weather');
+  }
 
   getCurrentWeather(city: string): Observable<any> {
     const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${this.unit}&APPID=${this.apiKey}`;
@@ -27,19 +32,5 @@ export class WeatherService {
         const x = { weather, temp };
         return x;
       }));
-  }
-
-  getWeatherDatabase(): Observable<any> {
-    /* const url = 'https://epitechdashboard.firebaseio.com/widget/weather';
-    return this.httpClient.get(url).pipe(
-      map(resp => {
-        const z = resp;
-        console.log(z);
-        return z;
-      })); */
-     return this.widget = this.afDB.list('/widget/weather').valueChanges().pipe(map(snapshot => {
-      const city  = snapshot[0];
-      return city;
-    })); 
   }
 }
