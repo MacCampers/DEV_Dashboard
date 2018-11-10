@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  dev_dashboard_2018:
+    image: dev_dashboard_2018
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - 8080:8080
