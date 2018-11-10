@@ -1,0 +1,6 @@
+version: '2'
+services:
+  angular:
+    build: My_Dashboard
+    ports:
+      - "8080:4200"
