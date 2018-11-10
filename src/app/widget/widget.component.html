@@ -1,0 +1,75 @@
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+  <app-header></app-header>
+
+  <div class="app-body">
+    <app-sidebar></app-sidebar>    
+
+    <main class="main">
+
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <nav aria-label="breadcrumb" role="navigation">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;">Weather</a></li>
+                      <button (click)="activateWeather()" class="btn btn-brand btn-sm btn-spotify" type="button" style="margin: 0 5px 4px 20px;">
+                          <span>Activer</span>
+                        </button>
+                        <button (click)="desactivateWeather()" class="btn btn-brand btn-sm btn-youtube" type="button" style="margin: 0 0 4px 0">
+                            <span>Desactiver</span>
+                          </button>
+                    </ol>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;">Google Map</a></li>
+                        <button (click)="activateMap()" class="btn btn-brand btn-sm btn-spotify" type="button" style="margin: 0 5px 4px 20px;">
+                            <span>Activer</span>
+                          </button>
+                          <button (click)="desactivateMap()" class="btn btn-brand btn-sm btn-youtube" type="button" style="margin: 0 0 4px 0">
+                              <span>Desactiver</span>
+                            </button>
+                      </ol>
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;">Calendar</a></li>
+                          <button (click)="activateCalendar()" class="btn btn-brand btn-sm btn-spotify" type="button" style="margin: 0 5px 4px 20px;">
+                              <span>Activer</span>
+                            </button>
+                            <button (click)="desactivateCalendar()" class="btn btn-brand btn-sm btn-youtube" type="button" style="margin: 0 0 4px 0">
+                                <span>Desactiver</span>
+                              </button>
+                        </ol>
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page"><a style="color: #20a8d8; cursor:pointer;">News</a></li>
+                          <button (click)="activateNews()" class="btn btn-brand btn-sm btn-spotify" type="button" style="margin: 0 5px 4px 20px;">
+                              <span>Activer</span>
+                            </button>
+                            <button (click)="desactivateNews()" class="btn btn-brand btn-sm btn-youtube" type="button" style="margin: 0 0 4px 0">
+                                <span>Desactiver</span>
+                              </button>
+                        </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+
+  </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/pace-progress/pace.min.js"></script>
+  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+  <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+  <script src="asset/main.js"></script>
+
+</body>
