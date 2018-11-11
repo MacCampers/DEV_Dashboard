@@ -31,7 +31,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-sm-6 col-lg-6"  *ngIf="isActiveyt == 1">
               <div class="card">
                 <div class="card-header">Youtube
                   <div class="btn-group float-right">
@@ -40,7 +40,7 @@
                       <i class="icon-settings"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" (click)="desactivateNews()">Desactiver</a>
+                      <a class="dropdown-item" (click)="desactivateYoutube()">Desactiver</a>
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@
               </div>
             </div>
 
-            <div class="col-md-6" *ngIf="isActiveCalendar == 1">
+            <div class="col-sm-6 col-lg-6" *ngIf="isActiveCalendar == 1">
               <div class="card">
                 <div class="card-header">Calendar
                   <div class="btn-group float-right">
@@ -114,7 +114,7 @@
               </div>
             </div>
 
-            <div class="col-md-6" *ngIf="isActiveNews == 1">
+            <div class="col-sm-6 col-lg-6" *ngIf="isActiveNews == 1">
               <div class="card">
                 <div class="card-header">News
                   <div class="btn-group float-right">

@@ -4,6 +4,7 @@ import { WeatherService } from '../weather/weather-service.service';
 import { MapService } from '../map/map-service.service';
 import { CalendarService } from '../calendar/service.service';
 import { NewsApiService } from '../news/news-api.service';
+import { YoutubeService } from '../youtube/youtube.service';
 
 @Component({
   selector: 'app-widget',
@@ -13,7 +14,7 @@ import { NewsApiService } from '../news/news-api.service';
 export class WidgetComponent implements OnInit {
 
   constructor(public authService: AuthService, private weatherService: WeatherService, private mapService: MapService,
-    private calendarService: CalendarService, private newsApiService: NewsApiService) { }
+    private calendarService: CalendarService, private newsApiService: NewsApiService, private youtubeService: YoutubeService) { }
 
   ngOnInit() {
   }
@@ -49,5 +50,13 @@ export class WidgetComponent implements OnInit {
 
   desactivateNews() {
     this.newsApiService.updateIsActive0();
+  }
+
+  activateYoutube() {
+    this.youtubeService.updateIsActive1();
+  }
+
+  desactivateYoutube() {
+    this.youtubeService.updateIsActive0();
   }
 }
