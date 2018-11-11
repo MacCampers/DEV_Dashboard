@@ -5,6 +5,7 @@ import { MapService } from '../map/map-service.service';
 import { CalendarService } from '../calendar/service.service';
 import { NewsApiService } from '../news/news-api.service';
 import { YoutubeService } from '../youtube/youtube.service';
+import { MovieService } from '../movie/movie.service';
 import { TimerService } from '../timer/timer.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -20,7 +21,7 @@ export class WidgetComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private timer: TimerService, public authService: AuthService, private weatherService: WeatherService, private mapService: MapService,
-    private calendarService: CalendarService, private newsApiService: NewsApiService, private youtubeService: YoutubeService, private location: Location) { }
+    private calendarService: CalendarService, private newsApiService: NewsApiService, private youtubeService: YoutubeService, private movieservice: MovieService, private location: Location) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -77,5 +78,13 @@ export class WidgetComponent implements OnInit {
 
   desactivateYoutube() {
     this.youtubeService.updateIsActive0();
+  }
+
+  activateMovie() {
+    this.movieservice.updateIsActive1();
+  }
+
+  desactivateMovie() {
+    this.movieservice.updateIsActive0();
   }
 }

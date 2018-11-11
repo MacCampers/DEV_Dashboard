@@ -131,16 +131,16 @@
               </div>
             </div>
 
-            <div class="col-sm-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6" *ngIf="isActiveMovie == 1">
                 <div class="card">
-                  <div class="card-header">MoovieDB
+                  <div class="card-header">Moovie Database
                     <div class="btn-group float-right">
                       <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="color:black;">
                         <i class="icon-settings"></i>
                       </button>
                       <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" (click)="desactivateNews()">Desactiver</a>
+                        <a class="dropdown-item" (click)="desactivateMovie()">Desactiver</a>
                       </div>
                     </div>
                   </div>

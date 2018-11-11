@@ -16,17 +16,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Widgets available
 
-1. weather
-2. calendrier
+1. Weather
+2. Calendar
 3. Google Map
 4. News Feed
 5. Youtube
+6. MovieDB
 
 ## Services Available
-1. Service Météo (OpenWeather)
+1. Service Météo (OpenWeatherApi)
 2. Service Calendar
-3. Service Google (Youtube, Google MAP)
+3. Service Google (Youtube, Google Map => GoogleApi)
 4. Service News (NewsApi)
+5. Service Film (MovieDB Api)
 
 ## Projet Conception
 ![Schémas](schemas.png)
