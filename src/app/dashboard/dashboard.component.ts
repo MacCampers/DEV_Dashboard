@@ -5,6 +5,7 @@ import { WeatherService } from '../weather/weather-service.service';
 import { MapService } from '../map/map-service.service';
 import { CalendarService } from '../calendar/service.service';
 import { NewsApiService } from '../news/news-api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
   isActiveNews: number;
 
   constructor(public authService: AuthService, private router: Router, private weatherService: WeatherService,
-    private mapService: MapService, private calendarService: CalendarService, private newsApiService: NewsApiService) { }
+    private mapService: MapService, private calendarService: CalendarService, private newsApiService: NewsApiService, private location: Location) { }
 
   onCityUpdated(city) {
     this.weatherService.updateCity({
@@ -29,18 +30,22 @@ export class DashboardComponent implements OnInit {
 
   desactivateWeather() {
     this.weatherService.updateIsActive0();
+    location.reload();
   }
 
   desactivateMap() {
     this.mapService.updateIsActive0();
+    location.reload();
   }
 
   desactivateCalendar() {
     this.calendarService.updateIsActive0();
+    location.reload();
   }
 
   desactivateNews() {
     this.newsApiService.updateIsActive0();
+    location.reload();
   }
 
 
