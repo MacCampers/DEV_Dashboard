@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../authentification/services/auth.service';
 import { WeatherService } from '../weather/weather-service.service';
 import { MapService } from '../map/map-service.service';
 import { CalendarService } from '../calendar/service.service';
 import { NewsApiService } from '../news/news-api.service';
 import { YoutubeService } from '../youtube/youtube.service';
+import { TimerService } from '../timer/timer.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-widget',
@@ -13,10 +16,26 @@ import { YoutubeService } from '../youtube/youtube.service';
 })
 export class WidgetComponent implements OnInit {
 
-  constructor(public authService: AuthService, private weatherService: WeatherService, private mapService: MapService,
-    private calendarService: CalendarService, private newsApiService: NewsApiService, private youtubeService: YoutubeService) { }
+  time:number;
+  form: FormGroup;
+
+  constructor(private formBuilder: FormBuilder, private timer: TimerService, public authService: AuthService, private weatherService: WeatherService, private mapService: MapService,
+    private calendarService: CalendarService, private newsApiService: NewsApiService, private youtubeService: YoutubeService, private location: Location) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      timer: ['', Validators.required]
+    })
+    this.timer.getTimer().then(x => {
+      this.time = x;
+    })
+  }
+
+  updateTimer() {
+    if(this.form.valid) {
+      this.timer.updateTimer(this.form.value);
+    location.reload();
+    }
   }
 
   activateWeather() {

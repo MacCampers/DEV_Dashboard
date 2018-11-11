@@ -1,0 +1,9 @@
+<section class="filter-wrapper">
+  <div class="keyword-wrapper">
+    <input type="text" class="search rounded" id="keyword" placeholder="Search a movie..." autofocus [formControl]="queryField" />
+  </div>
+</section>
+<div *ngFor="let movie of results |  slice:0:6; let ind=index;" class="poster-container" (click)="moviedetails(movie.id)">
+  <img src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}" class="poster">
+  <p>{{(movie.title.length>25)? (movie.title | slice:0:25)+'..':(movie.title)}}</p>
+</div>
