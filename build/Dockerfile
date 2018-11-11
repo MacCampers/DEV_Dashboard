@@ -1,13 +1,17 @@
 FROM node:8.9
 
-ENV HOME /usr/src/app
+RUN mkdir -p /usr/src/app
 
-COPY . $HOME
+WORKDIR /usr/src/app
 
-WORKDIR $HOME
-
-RUN npm install
+COPY package.json /usr/src/app/
 
 RUN npm install @angular/cli
 
-CMD ng serve --host 0.0.0.0
+RUN npm install --silent
+
+COPY . /usr/src/app/
+
+EXPOSE 8080
+
+CMD ["npm", "start"]

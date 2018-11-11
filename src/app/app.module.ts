@@ -43,6 +43,7 @@ import { AuthService } from './authentification/services/auth.service';
 import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
 import { WeatherSettingComponent } from './weather/weather-setting/weather-setting.component';
 import { NewsComponent } from './news/news/news.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 
 const CONFIG: FirebaseAppConfig = {
@@ -81,6 +82,7 @@ const ROUTES: Routes = [
     CalendarComponent,
     AboutJsonComponent,
     NewsComponent,
+    YoutubeComponent,
   ],
   imports: [
     BrowserModule,

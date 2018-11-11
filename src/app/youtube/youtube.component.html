@@ -1,0 +1,36 @@
+
+<nav class="navbar">
+  <div>
+    <form class="form-inline my-2 my-lg-0">
+      <input name="searchValue" [(ngModel)]="searchValue" class="form-control mr-sm-2" type="text" placeholder="Search a video here." aria-label="Search">
+      <button (click)="searchVideo()" class="btn btn-info" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="padding" *ngIf="videos.length != 0">
+  <h6 title="Recomended">Recomended</h6>
+</div>
+
+<div class="row paddingImg">
+  <div class="cards col-sm" *ngFor="let video of videos">
+    <img title="Play me" (click)="playVideo(video.id, video.snippet.description, video.snippet.title)" class="cards-img-top "
+      src="{{video.snippet.thumbnails.high.url}}" alt="Thumbnail of the video {{video.snippet.title}}">
+  </div>
+</div>
+
+<div *ngIf="showVideoContainer==false">
+  <h4 class="notificationTitle" title="Search some video and click the image to watch it">Search some video and click the image to watch it</h4>
+</div>
+
+<div *ngIf="showVideoContainer==true">
+  <div class="content">
+    <iframe class="e2e-iframe-trusted-src" id="player" type="text/html" [src]="trustedUrl" frameborder="0"></iframe>
+  </div>
+  <div class="card content">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+    </div>
+  </div>
+</div>
