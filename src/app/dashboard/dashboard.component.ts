@@ -8,6 +8,7 @@ import { NewsApiService } from '../news/news-api.service';
 import { Location } from '@angular/common';
 import { YoutubeService } from '../youtube/youtube.service';
 import { MovieService } from '../movie/movie.service';
+import { TimerService } from '../timer/timer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ import { MovieService } from '../movie/movie.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  time:number;
   isActiveWeather: number;
   isActiveMap: number;
   isActiveCalendar: number;
@@ -25,7 +26,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(public authService: AuthService, private router: Router, private weatherService: WeatherService,
     private mapService: MapService, private calendarService: CalendarService, private newsApiService: NewsApiService,
-    private youtubeservice: YoutubeService, private movieService: MovieService, private location: Location) { }
+    private youtubeservice: YoutubeService, private movieService: MovieService, private location: Location,
+    private timer: TimerService) { }
 
   onCityUpdated(city) {
     this.weatherService.updateCity({
@@ -65,6 +67,12 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
+    this.timer.getTimer().then(x => {
+      this.time = x;
+      setTimeout(() => {
+        window.location.reload();
+      }, this.time * 1000);
+    })
     this.weatherService.getWeatherDatabase().then(z => {
       this.isActiveWeather = z.isActive;
     })

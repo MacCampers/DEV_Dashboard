@@ -23,7 +23,8 @@ export class YoutubeComponent implements OnInit {
     console.log(this.videos);
   }
 
-  ngOnInit() {    
+  ngOnInit() { 
+      
   }
   searchVideo() {
     if(this.showVideoContainer==true){
