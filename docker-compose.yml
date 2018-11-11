@@ -1,6 +1,9 @@
-version: '2'
+version: '2.1'
+
 services:
-  angular:
-    build: My_Dashboard
+  dashboard:
+    build: ./build
+    volumes:
+      - .:/usr/src/app
     ports:
-      - "8080:4200"
+      - 8080:8080
