@@ -20,7 +20,7 @@ export class MovieComponent implements OnInit {
    ngOnInit() {
      this._movies.getMovies().subscribe(
        data => {this.results = data.results;
-       console.log(this.results);}
+       }
      );
      this.queryField.valueChanges
      .subscribe(queryField => this._movies.search(queryField).subscribe(response => this.results = response.results));

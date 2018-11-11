@@ -20,7 +20,6 @@ export class YoutubeComponent implements OnInit {
   
 
   constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer) {
-    console.log(this.videos);
   }
 
   ngOnInit() { 

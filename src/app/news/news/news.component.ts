@@ -14,7 +14,6 @@ export class NewsComponent {
   mSources: Array<any>;
 
   constructor(private newsapi: NewsApiService) {
-    console.log('app component constructor called');
   }
 
   ngOnInit() {
@@ -24,7 +23,6 @@ export class NewsComponent {
 
 
   searchArticles(source) {
-    console.log("selected source is: " + source);
     this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
 

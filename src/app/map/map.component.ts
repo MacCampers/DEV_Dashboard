@@ -76,7 +76,6 @@ export class MapComponent implements OnInit {
     this.geocoder.geocode({
       'address': address
     }, (results, status) => {
-      console.log(results);
       if (status == google.maps.GeocoderStatus.OK) {
         for (var i = 0; i < results[0].address_components.length; i++) {
           let types = results[0].address_components[i].types

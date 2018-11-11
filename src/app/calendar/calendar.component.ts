@@ -59,11 +59,7 @@ export class CalendarComponent implements OnInit {
       },
       draggable: true
     },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-    },
+   
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
